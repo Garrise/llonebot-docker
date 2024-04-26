@@ -4,6 +4,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV BOOT_MODE=3
 COPY start.sh /root/start.sh
 
+# 下载ChrOnoCat
+RUN cc_version=$(curl -Ls "https://api.github.com/repos/chrononeko/chronocat/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') && \
+    curl -L -o /tmp/chronocat-llqqnt-engine-chronocat-api.zip https://github.com/chrononeko/chronocat/releases/download/${cc_version}/chronocat-llqqnt-engine-chronocat-api-${cc_version}.zip && \
+    curl -L -o /tmp/chronocat-llqqnt-engine-chronocat-event.zip https://github.com/chrononeko/chronocat/releases/download/${cc_version}/chronocat-llqqnt-engine-chronocat-event-${cc_version}.zip && \
+    curl -L -o /tmp/chronocat-llqqnt-engine-crychiccat.zip https://github.com/chrononeko/chronocat/releases/download/${cc_version}/chronocat-llqqnt-engine-crychiccat-${cc_version}.zip && \
+    curl -L -o /tmp/chronocat-llqqnt.zip https://github.com/chrononeko/chronocat/releases/download/${cc_version}/chronocat-llqqnt-${cc_version}.zip
+
 RUN arch=$(arch | sed s/aarch64/arm64/ | sed s/x86_64/amd64/) && \
     curl -o /root/linuxqq.deb https://dldir1.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.6_240322_${arch}_01.deb && \
     dpkg -i /root/linuxqq.deb && apt-get -f install -y && rm /root/linuxqq.deb && \
