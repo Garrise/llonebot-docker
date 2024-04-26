@@ -1,5 +1,5 @@
 # LLOneBot-Docker
-[DockerHub](https://hub.docker.com/r/mlikiowa/llonebot-docker)
+[DockerHub](https://hub.docker.com/r/garrise/ll-cc-docker)
 
 ## Information
 请注意! 该项目使用应当遵守上游开源库协议与要求，遵守当地法律与规范。
@@ -13,9 +13,9 @@ LLOneBot容器已经带有ffmpeg不需要额外配置，如手动点击配置 �
 
 ## Image Layer
 
-- mlikiowa/llonebot-docker:latest
+- garrise/ll-cc-docker:latest
     - 不提供 VNC, 只能通过 LLWebUiApi 来登录
-- mlikiowa/llonebot-docker:vnc
+- garrise/ll-cc-docker:vnc
     - 提供了 VNC
 
 ## Install
@@ -24,7 +24,7 @@ LLOneBot容器已经带有ffmpeg不需要额外配置，如手动点击配置 �
    
 ## 使用方案（一）VNC登录
  ```bash
- sudo docker run -d --name onebot-docker0 -e VNC_PASSWD=vncpasswd -p 3000:3000 -p 5900:5900 -p 3001:3001 -v ${PWD}/LiteLoader:/opt/QQ/resources/app/LiteLoader mlikiowa/llonebot-docker:vnc
+ sudo docker run -d --name onebot-docker0 -e VNC_PASSWD=vncpasswd -p 3000:3000 -p 5900:5900 -p 3001:3001 -v ${PWD}/LiteLoader:/opt/QQ/resources/app/LiteLoader garrise/ll-cc-docker:vnc
  ```
 其中vncpasswd换成你的VNC密码
 或者下载代码中的docker-compose.yml，然后执行
@@ -38,7 +38,7 @@ sudo docker-compose up -d
 ## 使用方案（二）LLWebuiApi 登录
 
  ```bash
-sudo docker run -d --name onebot-docker0 -e VNC_PASSWD=vncpasswd -p 3000:3000 -p 6099:6099 -p 3001:3001 -v ${PWD}/LiteLoader:/opt/QQ/resources/app/LiteLoader mlikiowa/llonebot-docker:latest
+sudo docker run -d --name onebot-docker0 -e VNC_PASSWD=vncpasswd -p 3000:3000 -p 6099:6099 -p 3001:3001 -v ${PWD}/LiteLoader:/opt/QQ/resources/app/LiteLoader garrise/ll-cc-docker:latest
  ```
 
 然后浏览器访问 `http://你的docker-ip:6099/api/panel/getQQLoginQRcode` 扫码登录

@@ -1,4 +1,4 @@
-FROM mlikiowa/llonebot-docker:latest
+FROM garrise/ll-cc-docker:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV VNC_PASSWD=vncpasswd

@@ -8,5 +8,5 @@ wget https://github.com/indigo-dc/udocker/releases/download/1.3.13/udocker-1.3.1
 tar zxvf udocker-1.3.13.tar.gz
 export PATH=`pwd`/udocker-1.3.13/udocker:$PATH
 udocker install
-udocker pull mlikiowa/llonebot-docker
-udocker run --name=llonebot0 --env="VNC_PASSWD=vncpasswd" --publish=6081:6081 mlikiowa/llonebot-docker
+udocker pull garrise/ll-cc-docker
+udocker run --name=llonebot0 --env="VNC_PASSWD=vncpasswd" --publish=6081:6081 garrise/ll-cc-docker

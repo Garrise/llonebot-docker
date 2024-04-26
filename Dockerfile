@@ -1,4 +1,4 @@
-FROM mlikiowa/llonebot-docker:base
+FROM garrise/ll-cc-docker:base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV BOOT_MODE=3
