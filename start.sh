@@ -18,6 +18,26 @@ if [ ! -f "/opt/QQ/resources/app/LiteLoader/plugins/LLOneBot/manifest.json" ]; t
     fi
 fi
 
+# 安装 chronocat-api
+if [ ! -f "/opt/QQ/resources/app/LiteLoader/plugins/LiteLoaderQQNT-Plugin-Chronocat-Engine-Chronocat-Api/manifest.json" ]; then
+    unzip /tmp/chronocat-llqqnt-engine-chronocat-api.zip -d /opt/QQ/resources/app/LiteLoader/plugins/
+fi
+
+# 安装 chronocat-event
+if [ ! -f "/opt/QQ/resources/app/LiteLoader/plugins/LiteLoaderQQNT-Plugin-Chronocat-Engine-Chronocat-Event/manifest.json" ]; then
+    unzip /tmp/chronocat-llqqnt-engine-chronocat-event.zip -d /opt/QQ/resources/app/LiteLoader/plugins/
+fi
+
+# 安装 poke
+if [ ! -f "/opt/QQ/resources/app/LiteLoader/plugins/LiteLoaderQQNT-Plugin-Chronocat-Engine-Crychiccat-master/manifest.json" ]; then
+    unzip /tmp/chronocat-llqqnt-engine-crychiccat.zip -d /opt/QQ/resources/app/LiteLoader/plugins/
+fi
+
+# 安装 chronocat
+if [ ! -f "/opt/QQ/resources/app/LiteLoader/plugins/LiteLoaderQQNT-Plugin-Chronocat/manifest.json" ]; then
+    unzip /tmp/chronocat-llqqnt.zip -d /opt/QQ/resources/app/LiteLoader/plugins/
+fi
+
 chmod 777 /tmp &
 rm -rf /run/dbus/pid &
 rm /tmp/.X1-lock &
